@@ -1,0 +1,15 @@
+{
+  "name": "hall-booking",
+  "version": "1.0.0",
+  "description": "Hall booking api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hall-booking"
+  },
+  "author": "",
+  "license": "ISC"
+}
