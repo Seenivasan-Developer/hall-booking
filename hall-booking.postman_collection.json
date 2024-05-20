@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "a5cd59a9-867b-461d-b2d1-4db893ddb9ee",
+		"name": "hall-booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34958818"
+	},
+	"item": [
+		{
+			"name": "createRoom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \"RoomName\": \"Mini Meeting Hall\",\r\n        \"amenities\": \"Dedicated and Experienced Venue Staff, Indoor and Outdoor Signage, Tech Equipment and Support, Appropriate Restrooms\",\r\n        \"Numberofseats\": 50\r\n\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hall-booking-4zjz.onrender.com/api/createRoom",
+					"protocol": "https",
+					"host": [
+						"hall-booking-4zjz",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"createRoom"
+					]
+				},
+				"description": "### Create Room\n\nThis endpoint allows you to create a new room for booking.\n\n#### Request Body\n\n- `RoomName` (string, required): The name of the room.\n    \n- `amenities` (string, required): The amenities available in the room.\n    \n- `Numberofseats` (number, required): The number of seats available in the room.\n    \n\n#### Response\n\nThe response is in JSON format and has the following schema:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"success\": {\n      \"type\": \"boolean\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    }\n  }\n}\n\n ```\n\n- `success` (boolean): Indicates if the room creation was successful.\n    \n- `message` (string): A message related to the room creation process."
+			},
+			"response": []
+		},
+		{
+			"name": "BookRoom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerName\": \"Chandran\",\r\n    \"Date\": \"10-05-2024\",\r\n    \"StartTime\": \"11:00 AM\",\r\n    \"EndTime\": \"07:00 PM\",\r\n    \"RoomID\": \"3\"\r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hall-booking-4zjz.onrender.com/api/bookRoom",
+					"protocol": "https",
+					"host": [
+						"hall-booking-4zjz",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"bookRoom"
+					]
+				},
+				"description": "### Book Room\n\nThis endpoint allows you to book a room by submitting the customer name, date, start time, end time, and room ID.\n\n#### Request Body\n\n- `CustomerName` (string, required): The name of the customer.\n    \n- `Date` (string, required): The date for booking the room.\n    \n- `StartTime` (string, required): The start time for the booking.\n    \n- `EndTime` (string, required): The end time for the booking.\n    \n- `RoomID` (string, required): The ID of the room to be booked.\n    \n\n#### Response\n\nUpon successful booking, the API returns a JSON object with the following fields:\n\n- `success` (boolean): Indicates if the booking was successful.\n    \n- `message` (string): A message regarding the booking status.\n    \n\nExample:\n\n``` json\n{\n  \"success\": true,\n  \"message\": \"\"\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "BookedRoomDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hall-booking-4zjz.onrender.com/api/BookedRoomDetails",
+					"protocol": "https",
+					"host": [
+						"hall-booking-4zjz",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"BookedRoomDetails"
+					]
+				},
+				"description": "### GET /api/BookedRoomDetails\n\nThis endpoint retrieves the details of booked rooms.\n\n#### Request\n\nThis is a GET request, and it does not require a request body.\n\n#### Response\n\n##### JSON Schema\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"sucess\": {\n      \"type\": \"boolean\"\n    },\n    \"data\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"RoomName\": {\n            \"type\": \"string\"\n          },\n          \"BookedStatus\": {\n            \"type\": \"string\"\n          },\n          \"CustomerName\": {\n            \"type\": \"string\"\n          },\n          \"Date\": {\n            \"type\": \"string\"\n          },\n          \"StartTime\": {\n            \"type\": \"string\"\n          },\n          \"EndTime\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}\n\n ```\n\nThe response returns a JSON object with a boolean field \"sucess\" indicating the success status, and an array \"data\" containing details of booked rooms including RoomName, BookedStatus, CustomerName, Date, StartTime, and EndTime."
+			},
+			"response": []
+		},
+		{
+			"name": "BookedCustomerDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hall-booking-4zjz.onrender.com/api/BookedCustomerDetails",
+					"protocol": "https",
+					"host": [
+						"hall-booking-4zjz",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"BookedCustomerDetails"
+					]
+				},
+				"description": "The `BookedCustomerDetails` endpoint retrieves the details of booked customers.\n\nThe response is in JSON format and has the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"sucess\": {\n            \"type\": \"boolean\"\n        },\n        \"data\": {\n            \"type\": \"array\",\n            \"items\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"CustomerName\": {\n                        \"type\": \"string\"\n                    },\n                    \"RoomName\": {\n                        \"type\": \"string\"\n                    },\n                    \"Date\": {\n                        \"type\": \"string\"\n                    },\n                    \"StartTime\": {\n                        \"type\": \"string\"\n                    },\n                    \"EndTime\": {\n                        \"type\": \"string\"\n                    }\n                }\n            }\n        }\n    }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "CustomerwithBookingDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hall-booking-4zjz.onrender.com/api/CustomerwithBookingDetails",
+					"protocol": "https",
+					"host": [
+						"hall-booking-4zjz",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"CustomerwithBookingDetails"
+					]
+				},
+				"description": "### GET /api/CustomerwithBookingDetails\n\nThis endpoint retrieves customer booking details.\n\n#### Request\n\n- Method: GET\n    \n- URL: `https://hall-booking-4zjz.onrender.com/api/CustomerwithBookingDetails`\n    \n- Headers: Not specified\n    \n- Query Parameters: Not specified\n    \n\n#### Response\n\n- Status: 200\n    \n- Content-Type: application/json\n    \n- Body:\n    \n    ``` json\n        {\n          \"sucess\": true,\n          \"data\": [\n            {\n              \"CustomerName\": \"\",\n              \"RoomName\": \"\",\n              \"Date\": \"\",\n              \"StartTime\": \"\",\n              \"EndTime\": \"\",\n              \"Bookingid\": 0,\n              \"BookingDate\": \"\",\n              \"BookedStatus\": \"\"\n            }\n          ]\n        }\n    \n     ```\n    \n\n#### Response JSON Schema\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"sucess\": {\n      \"type\": \"boolean\"\n    },\n    \"data\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"CustomerName\": {\n            \"type\": \"string\"\n          },\n          \"RoomName\": {\n            \"type\": \"string\"\n          },\n          \"Date\": {\n            \"type\": \"string\"\n          },\n          \"StartTime\": {\n            \"type\": \"string\"\n          },\n          \"EndTime\": {\n            \"type\": \"string\"\n          },\n          \"Bookingid\": {\n            \"type\": \"integer\"\n          },\n          \"BookingDate\": {\n            \"type\": \"string\"\n          },\n          \"BookedStatus\": {\n            \"type\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}\n\n ```"
+			},
+			"response": []
+		}
+	]
+}
