@@ -1,0 +1,30 @@
+    {
+        "Roomid": 1,
+        "RoomName": "101",
+        "amenties": "Toiletries, Personal care, Coffee Kit, Tissue box, Bathrobes and Slippers, Free breakfast, Options for pillows, Free WiFi, Free parking, Premium coffee, Gym or fitness center, Laundry",
+        "Numberofseats": 2
+    },
+    {
+        "Roomid": 2,
+        "RoomName": "102",
+        "amenties": "Toiletries, Personal care, Coffee Kit, Tissue box, Bathrobes and Slippers, Free breakfast, Options for pillows, Free WiFi, Free parking, Premium coffee, Gym or fitness center, Laundry",
+        "Numberofseats": 2
+    },
+    {
+        "Roomid": 3,
+        "RoomName": "103",
+        "amenties": "Toiletries, Personal care, Coffee Kit, Tissue box, Bathrobes and Slippers, Free breakfast, Options for pillows, Free WiFi, Free parking, Premium coffee, Gym or fitness center, Laundry",
+        "Numberofseats": 1
+    },
+    {
+        "Roomid": 4,
+        "RoomName": "104",
+        "amenties": "Toiletries, Personal care, Coffee Kit, Tissue box, Bathrobes and Slippers, Free breakfast, Options for pillows, Free WiFi, Free parking, Premium coffee, Gym or fitness center, Laundry",
+        "Numberofseats": 3
+    },
+    {
+        "Roomid": 5,
+        "RoomName": "105",
+        "amenties": "Toiletries, Personal care, Coffee Kit, Tissue box, Bathrobes and Slippers, Free breakfast, Options for pillows, Free WiFi, Free parking, Premium coffee, Gym or fitness center, Laundry",
+        "Numberofseats": 2
+    }
