@@ -12,7 +12,7 @@ https://hall-booking-4zjz.onrender.com/api/bookRoom
 
 3. List all Rooms with Booked Data with:
 ****************************************
-https://hall-booking-4zjz.onrender.com/api/bookRoom
+https://hall-booking-4zjz.onrender.com/api/BookedRoomDetails
 
 4. List all customers with booked Data with:
 ********************************************
